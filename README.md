@@ -14,3 +14,5 @@ This CRUD Application incorporates both functionality and visual design to enhan
     * Base, accent, light grey, dark grey
   * Accessibility
     * Alt text
+
+Demo video: https://www.youtube.com/watch?v=9wvaQp-zsDY
