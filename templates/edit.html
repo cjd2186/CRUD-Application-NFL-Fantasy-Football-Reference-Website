@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<title>Edit Player</title>
+<head>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+    </head>
+<body>
+    <div class="container">
+        <div class="player-info">
+            <img src="{{ player.image }}" alt="{{ player.first_name }} {{ player.last_name }}">
+            <form action="/edit/{{ player_id }}" method="POST" id="edit-form">
+                <div class="field">
+                    <br>
+                    <label>Fantasy Ranking:</label>
+                    <span id="rank">{{ player.player_id }}</span>
+                </div>
+                <div class="field">
+                    <label>Player Name:</label>
+                    <input type="text" name="name" value="{{ player.name }}">
+                </div>
+                <div class="field">
+                    <label>Team:</label>
+                    <input type="text" name="team" value="{{ player.team }}">
+                </div>
+                <div class="field">
+                    <label>Team Abbreviation:</label>
+                    <input type="text" name="team_short" value="{{ player.team_short }}">
+                </div>
+                <div class="field">
+                    <label>Position:</label>
+                    <input type="text" name="position_full" value="{{ player.position_full }}">
+                </div>
+                <div class="field">
+                    <label>Position Abbreviation:</label>
+                    <input type="text" name="position" value="{{ player.position }}">
+                </div>
+                <div class="field">
+                    <label>Jersey Number:</label>
+                    <input type="text" name="number" value="{{ player.number }}">
+                </div>
+                <div class="field">
+                    <label>Headshot Image URL:</label>
+                    <input type="text" name="image" value="{{ player.image }}">
+                </div>
+                <div class="field">
+                    <label>Passing Yards:</label>
+                    <input type="text" name="passing_yds" value="{{ player.passing_yds }}">
+                </div>
+                <div class="field">
+                    <label>Passing Touchdowns:</label>
+                    <input type="text" name="passing_tds" value="{{ player.passing_tds }}">
+                </div>
+                <div class="field">
+                    <label>Interceptions:</label>
+                    <input type="text" name="ints" value="{{ player.ints }}">
+                </div>
+                <div class="field">
+                    <label>Rushing Yards:</label>
+                    <input type="text" name="rushing_yds" value="{{ player.rushing_yds }}">
+                </div>
+                <div class="field">
+                    <label>Rushing Touchdowns:</label>
+                    <input type="text" name="rushing_tds" value="{{ player.rushing_tds }}">
+                </div>
+                <div class="field">
+                    <label>Receiving Yards:</label>
+                    <input type="text" name="receiving_yds" value="{{ player.receiving_yds }}">
+                </div>
+                <div class="field">
+                    <label>Receiving Touchdowns:</label>
+                    <input type="text" name="receiving_tds" value="{{ player.receiving_tds }}">
+                </div>
+                <div class="field">
+                    <label>Receptions:</label>
+                    <input type="text" name="receptions" value="{{ player.receptions }}">
+                </div>
+                <div class="field">
+                    <label>Total Fantasy Points:</label>
+                    <input type="text" name="total_fpts" value="{{ player.total_fpts }}">
+                </div>
+                <div class="field">
+                    <label>Average Fantasy Points:</label>
+                    <input type="text" name="avg_fpts" value="{{ player.avg_fpts }}">
+                </div>
+                <div class="field">
+                    <label>Summary:</label>
+                    <textarea name="summary">{{ player.summary }}</textarea>
+                </div>
+                <div class="field">
+                    <label>Teammates Depth Chart:</label>
+                    <input type="text" name="teammates_depth_chart" value="{{ player.teammates_depth_chart }}">
+                </div>
+                <dialog id="confirmation-dialog">
+                    <p>Are you sure you want to discard changes?</p>
+                    <button id="confirm-btn" type="button">Confirm</button>
+                    <button id="cancel-btn" type="button">Cancel</button>
+                </dialog>
+                <button id="submit-btn" type="button" class="btn btn-success">Submit</button>
+                <button id="discard-btn" type="button" class="btn btn-danger">Discard</button>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

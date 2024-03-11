@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+    <title>Add Player</title>
+</head>
+<body>
+<div class="container-fluid gray lgray" >
+  <h1 class="red-base white">Fill in the following fields to add a new player to the database!<br></h1>
+    <h2 id="success-message">New Player Successfully Added!</h2>
+    <button id="see-it-here" class="btn btn-success">View the Player here</button>
+    
+    <h3 class="navy white">Player Information Form</h3>
+    <form action="#" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Joe Burrow"><br><br>
+        
+        <label for="player_id">Fantasy Ranking:</label><br>
+        <input type="text" id="player_id" name="player_id" placeholder="118"><br><br>
+
+        <label for="team">Team:</label><br>
+        <input type="text" id="team" name="team" placeholder="Cincinnati Bengals"><br><br>
+        
+        <label for="team_short">Team Abbreviation:</label><br>
+        <input type="text" id="team_short" name="team_short" placeholder="Cin"><br><br>
+        
+        <label for="position_full">Position:</label><br>
+        <input type="text" id="position_full" name="position_full" placeholder="Quarterback"><br><br>
+        
+        <label for="position">Position Abbreviation:</label><br>
+        <input type="text" id="position" name="position" placeholder="QB"><br><br>
+        
+        <label for="number">Jersey Number:</label><br>
+        <input type="text" id="number" name="number" placeholder="9"><br><br>
+        
+        <label for="image">Headshot Image url:</label><br>
+        <input type="text" id="image" name="image" placeholder="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3915511.png&w=350&h=254"><br><br>
+        
+        <label for="passing_yds">Passing Yards:</label><br>
+        <input type="text" id="passing_yds" name="passing_yds" placeholder="2309"><br><br>
+        
+        <label for="passing_tds">Passing Touchdowns:</label><br>
+        <input type="text" id="passing_tds" name="passing_tds" placeholder="15"><br><br>
+        
+        <label for="ints">Interceptions:</label><br>
+        <input type="text" id="ints" name="ints" placeholder="6"><br><br>
+        
+        <label for="rushing_yds">Rushing Yards:</label><br>
+        <input type="text" id="rushing_yds" name="rushing_yds" placeholder="88"><br><br>
+        
+        <label for="rushing_tds">Rushing Touchdowns:</label><br>
+        <input type="text" id="rushing_tds" name="rushing_tds" placeholder="2"><br><br>
+        
+        <label for="receiving_yds">Receiving Yards:</label><br>
+        <input type="text" id="receiving_yds" name="receiving_yds" placeholder="34"><br><br>
+        
+        <label for="receiving_tds">Receiving Touchdowns:</label><br>
+        <input type="text" id="receiving_tds" name="receiving_tds" placeholder="1"><br><br>
+        
+        <label for="receptions">Receptions:</label><br>
+        <input type="text" id="receptions" name="receptions" placeholder="3"><br><br>
+        
+        <label for="total_fpts">Total Fantasy Points:</label><br>
+        <input type="text" id="total_fpts" name="total_fpts" placeholder="147.16"><br><br>
+        
+        <label for="avg_fpts">Average Fantasy Points:</label><br>
+        <input type="text" id="avg_fpts" name="avg_fpts" placeholder="14.7"><br><br>
+        
+        <label for="summary">Summary:</label><br>
+        <textarea id="summary" name="summary" placeholder="Joe Burrow, winner of the 2019 Heisman Memorial College football..."></textarea><br><br>
+        
+        <label for="teammates_depth_chart">Teammates Depth Chart:</label><br>
+        <input type="text" id="teammates_depth_chart" name="teammates_depth_chart" placeholder="19, 45, 395"><br><br>
+        
+        <input id="add-submit" type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
+
+{% endblock %}

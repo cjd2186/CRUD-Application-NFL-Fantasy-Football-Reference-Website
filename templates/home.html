@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<html>
+    <head>
+        <title> ESPN Fantasy Top Players</title>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+        <script>
+            let data = {{data|tojson}} 
+        </script>
+    </head>
+    <body>
+    <div id="container-fluid">
+        <!--There should be a conceptual group whose goal is 
+        to indicate the purpose and the audience for the site. 
+        Consider using a title, an image, and some descriptive text.-->
+        <h1 id="title"> Welcome to ESPN Fantasy Football League Top Players! </h1>
+        <br><br><br>
+        <div class="red-base"> <br>
+        <div class="row">
+            <div class="col 4">
+                <h2 id="left-desc">
+                    The perfect reference guide for ANY Fantasy Football Owner!
+                    <br><br>
+                </h2>
+            </div>
+            <div class ="col 4" id="home-img">
+                <img src="https://a2.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Ffantasy.png" alt="ESPN Fantasy Logo" width="400"> 
+            </div>
+            <div class="col 4">
+                <h2 id="right-desc">
+                    Here you can look up players, positions, teams, and stats to the top fantasy football players!
+                </h2>
+            </div><br>
+        </div>
+            <br>
+            <div class="row" id="hello-div"> 
+                <h2 class="col-12">
+                    Let's help you WIN your fantasy league!
+                </h2>
+            </div>
+            <br><br><br><br>
+        </div><br>
+            <div class="row">
+                <h3>
+                    Here are the top 3 players in fantasy football:
+                </h3>
+            </div>
+            <br>
+        </div>
+        
+        <div class="row" id="popular-items-container">
+        </div>
+    </div> 
+    </body>
+</html>
+{% endblock %}

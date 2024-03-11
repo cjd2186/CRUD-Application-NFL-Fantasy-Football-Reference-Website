@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<html>
+    <title>View Player</title>
+    <head>
+        <!--script type="text/javascript" src="{{ url_for('static', filename = 'players.js') }}"></script-->
+    </head>
+
+    <body>
+    <div class="container red">
+        <div class="player-info">
+            <div class="row">
+            <div class="col-3">
+                <div class="row">
+                    <h1 class="field">
+                        <label text="Player Name:"></label>
+                        <span>{{ player.name }}</span>
+                    </h1>
+                </div>
+                <div class="row bordered">
+                    <img src="{{ player.image }}" alt="{{ player.name }}">
+                </div>
+            
+                <div class="row italic inline">
+                    <span class="field">
+                        <label text="Team:"></label>
+                        <span>{{ player.team }}</span>
+                    </span>
+                    <span class="field">
+                        <label text="Team Abbreviation:"</label>
+                        <span>{{ player.team_short }}</span>
+                    </span>
+                    <span class="field">
+                        <label>#</label>
+                        <span>{{ player.number }}</span>
+                    </span>
+
+                    <span class="field">
+                        <label text="Position:"></label>
+                        <span>{{ player.position }}</span>
+                    </span>
+                    <span class="field">
+                        <label>Position (Full):</label>
+                        <span>{{ player.position_full }}</span>
+                    </span>
+                </div>
+
+                <div class="row large">
+                    <div class="field">
+                        <label>Rankings of Teammates Depth Chart:</label>
+                        <ul>
+                            {% for teammate_id in player.teammates_depth_chart %}
+                                <li><a href="{{ url_for('view', id=teammate_id) }}">View Teammate {{ teammate_id }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+
+            </div>
+            <div class="col-4 navy white">
+                <div class="row">
+                    <h1 class="field">
+                        <label>Fantasy Ranking:</label>
+                        <span>{{ player.player_id }}</span>
+                    </h1>
+                </div>
+                <div class="row large">
+                    <div class="field">
+                        <label>Total Fantasy Points:</label>
+                        <span class="bold">{{ player.total_fpts }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Average Fantasy Points:</label>
+                        <span class="bold">{{ player.avg_fpts }}</span>
+                    </div>
+                </div>
+                <h3 class="row underline"> 2023 Season Stats</h3>
+                <div class="row">
+
+                </div>
+                <div class="row large">
+                    <div class="field">
+                        <label>Passing Yards:</label>
+                        <span>{{ player.passing_yds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Passing Touchdowns:</label>
+                        <span>{{ player.passing_tds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Interceptions:</label>
+                        <span>{{ player.ints }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Rushing Yards:</label>
+                        <span>{{ player.rushing_yds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Rushing Touchdowns:</label>
+                        <span>{{ player.rushing_tds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Receiving Yards:</label>
+                        <span>{{ player.receiving_yds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Receiving Touchdowns:</label>
+                        <span>{{ player.receiving_tds }}</span>
+                    </div>
+                    <div class="field">
+                        <label>Receptions:</label>
+                        <span>{{ player.receptions }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="field">
+                    <label class="large bold underline">Biography:</label>
+                    <p>{{ player.summary }}</p>
+                </div>
+            </div>
+        </div>
+            
+            
+            
+            
+           
+           
+  
+            
+           
+        </div>
+    </div>
+    
+    <button class="btn btn-secondary" onclick="window.location.href='/edit/{{ player.player_id }}'">Edit Players</button>
+    </body>
+</html>
+
+
+{% endblock %}
+
